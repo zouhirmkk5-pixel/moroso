@@ -3,180 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Apps | Premium Mobile Experience</title>
+    <title>ROBXA | Premium Roblox Mobile Apps</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #050505;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030303;
             color: #ffffff;
-            overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass:hover {
-            border: 1px solid rgba(59, 130, 246, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.4);
             background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.15) 0%, rgba(5, 5, 5, 1) 70%);
-        }
-
-        .btn-primary {
+        .btn-gradient {
             background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s ease;
         }
 
-        .btn-primary:hover {
+        .btn-gradient:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
         }
 
-        .text-glow {
-            text-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        .hero-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(60px);
         }
 
         .nav-blur {
             backdrop-filter: blur(20px);
-            background: rgba(5, 5, 5, 0.8);
+            background: rgba(3, 3, 3, 0.8);
         }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030303; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 nav-blur border-b border-white/10 px-6 py-4">
+    <nav class="fixed w-full z-50 nav-blur border-b border-white/5 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="text-2xl font-extrabold tracking-tighter">ROBXA<span class="text-blue-500">.</span></div>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
+            <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-400">
                 <a href="#home" class="hover:text-white transition">Home</a>
-                <a href="#apps" class="hover:text-white transition">Apps</a>
-                <a href="#features" class="hover:text-white transition">Features</a>
-                <a href="#faq" class="hover:text-white transition">FAQ</a>
+                <a href="#apps" class="hover:text-white transition">Applications</a>
+                <a href="#features" class="hover:text-white transition">Why Us</a>
+                <a href="#faq" class="hover:text-white transition">Support</a>
             </div>
-            <a href="#apps" class="btn-primary px-6 py-2 rounded-full text-sm font-bold">Download</a>
+            <a href="#apps" class="btn-gradient px-6 py-2 rounded-full text-sm font-bold">Download App</a>
         </div>
     </nav>
 
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 hero-gradient px-6">
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden">
+        <div class="hero-glow"></div>
         <div class="max-w-4xl text-center" data-aos="fade-up" data-aos-duration="1000">
-            <span class="inline-block px-4 py-1 mb-6 text-xs font-bold tracking-widest text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full">
-                The Future of Roblox Gaming
+            <span class="inline-block px-4 py-1 mb-6 text-[10px] font-bold tracking-[0.2em] text-blue-400 uppercase bg-blue-500/10 border border-blue-500/20 rounded-full">
+                Professional Roblox Tools
             </span>
-            <h1 class="text-5xl md:text-8xl font-extrabold mb-6 leading-tight">
-                Best Roblox <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Mobile Apps</span>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 leading-[1.1] tracking-tight">
+                The Best <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-indigo-400">Roblox Mobile</span> Experience.
             </h1>
-            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-                Elevate your gameplay with cutting-edge performance. Discover the ultimate experience with Roblox Beta and Roblox Lite.
+            <p class="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                Take your gameplay to the next level with our optimized Roblox versions. Faster, smoother, and built for winners.
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#apps" class="btn-primary px-10 py-4 rounded-xl font-bold text-lg">Get Started Now</a>
-                <a href="#features" class="glass px-10 py-4 rounded-xl font-bold text-lg">Learn More</a>
+            <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                <a href="#apps" class="btn-gradient px-12 py-5 rounded-2xl font-bold text-lg">Explore Apps</a>
+                <a href="#features" class="glass px-12 py-5 rounded-2xl font-bold text-lg border border-white/10 hover:bg-white/5">Features</a>
             </div>
         </div>
     </section>
 
-    <section id="apps" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <h2 class="text-4xl font-bold mb-4">Choose Your Version</h2>
-            <p class="text-gray-500">Tailored performance for every device.</p>
+    <section id="apps" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-20" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-6">Premium Downloads</h2>
+            <p class="text-gray-500 text-lg">Select the version that fits your device best.</p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="glass p-8 md:p-12 rounded-[2rem]" data-aos="fade-right">
-                <div class="w-16 h-16 bg-blue-600/20 rounded-2xl flex items-center justify-center mb-8">
-                    <i class="fas fa-rocket text-3xl text-blue-500"></i>
+        <div class="grid md:grid-cols-2 gap-10">
+            <div class="glass overflow-hidden rounded-[2.5rem]" data-aos="fade-right">
+                <div class="h-72 overflow-hidden bg-zinc-900">
+                    <img src="beta.jpg" alt="Roblox Beta Preview" class="w-full h-full object-cover transition duration-700 hover:scale-110">
                 </div>
-                <h3 class="text-3xl font-bold mb-4">ROBLOX BETA</h3>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Be the first to experience the future. Get early access to experimental features, high-fidelity shaders, and ultra-smooth gameplay mechanics before anyone else.
-                </p>
-                <ul class="space-y-3 mb-10 text-sm text-gray-300">
-                    <li><i class="fas fa-check text-blue-500 mr-2"></i> Unlocked FPS Settings</li>
-                    <li><i class="fas fa-check text-blue-500 mr-2"></i> Early Access Features</li>
-                    <li><i class="fas fa-check text-blue-500 mr-2"></i> Pro Debugging Tools</li>
-                </ul>
-                <button class="w-full btn-primary py-4 rounded-xl font-bold">Download Beta</button>
+                <div class="p-10">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-3xl font-extrabold mb-2 text-glow">ROBLOX BETA</h3>
+                            <span class="text-blue-500 text-xs font-bold uppercase tracking-widest">Early Access • v2.610</span>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center border border-blue-500/20">
+                            <i class="fas fa-rocket text-blue-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-10 leading-relaxed">
+                        Experience the latest updates before anyone else. Includes high-end shaders, unlocked FPS settings, and exclusive developer features for the ultimate power user.
+                    </p>
+                    <button class="w-full btn-gradient py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
+                        <i class="fas fa-download"></i> Download Beta
+                    </button>
+                </div>
             </div>
 
-            <div class="glass p-8 md:p-12 rounded-[2rem]" data-aos="fade-left">
-                <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mb-8">
-                    <i class="fas fa-bolt text-3xl text-purple-500"></i>
+            <div class="glass overflow-hidden rounded-[2.5rem]" data-aos="fade-left">
+                <div class="h-72 overflow-hidden bg-zinc-900">
+                    <img src="lite.jpg" alt="Roblox Lite Preview" class="w-full h-full object-cover transition duration-700 hover:scale-110">
                 </div>
-                <h3 class="text-3xl font-bold mb-4">ROBLOX LITE</h3>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Optimized for speed. Designed for low-end devices and those who value storage space. Maximum performance with zero lag, even on older hardware.
-                </p>
-                <ul class="space-y-3 mb-10 text-sm text-gray-300">
-                    <li><i class="fas fa-check text-purple-500 mr-2"></i> 60% Less Storage Required</li>
-                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Zero Battery Drain Mode</li>
-                    <li><i class="fas fa-check text-purple-500 mr-2"></i> Instant Loading Times</li>
-                </ul>
-                <button class="w-full glass py-4 rounded-xl font-bold border-purple-500/30 hover:bg-purple-500/10 transition">Download Lite</button>
+                <div class="p-10">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h3 class="text-3xl font-extrabold mb-2">ROBLOX LITE</h3>
+                            <span class="text-purple-500 text-xs font-bold uppercase tracking-widest">Fast & Stable • v1.0.4</span>
+                        </div>
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center border border-purple-500/20">
+                            <i class="fas fa-bolt text-purple-500"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-10 leading-relaxed">
+                        Perfect for older devices or low storage. Roblox Lite removes unnecessary background assets to provide 100% lag-free gameplay with minimal battery consumption.
+                    </p>
+                    <button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3 transition">
+                        <i class="fas fa-download"></i> Download Lite
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="features" class="py-24 bg-[#080808]">
+    <section id="features" class="py-24 bg-zinc-950/50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <div data-aos="zoom-in">
-                    <i class="fas fa-shield-alt text-4xl text-blue-500 mb-6"></i>
-                    <h4 class="text-xl font-bold mb-3">Secure Download</h4>
-                    <p class="text-gray-500">Every build is verified and scanned for maximum safety.</p>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="p-8 text-center" data-aos="fade-up">
+                    <div class="text-blue-500 text-3xl mb-6"><i class="fas fa-shield-virus"></i></div>
+                    <h4 class="font-bold mb-3">100% Secure</h4>
+                    <p class="text-gray-500 text-sm">Verified files, safe for your account.</p>
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-tachometer-alt text-4xl text-blue-500 mb-6"></i>
-                    <h4 class="text-xl font-bold mb-3">Fast Performance</h4>
-                    <p class="text-gray-500">Optimized code ensures the highest possible frame rates.</p>
+                <div class="p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-blue-500 text-3xl mb-6"><i class="fas fa-microchip"></i></div>
+                    <h4 class="font-bold mb-3">Optimized</h4>
+                    <p class="text-gray-500 text-sm">Max performance on any device.</p>
                 </div>
-                <div data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-users text-4xl text-blue-500 mb-6"></i>
-                    <h4 class="text-xl font-bold mb-3">Trusted by Users</h4>
-                    <p class="text-gray-500">Joined by over 500,000+ gamers globally every day.</p>
+                <div class="p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-blue-500 text-3xl mb-6"><i class="fas fa-cloud-download-alt"></i></div>
+                    <h4 class="font-bold mb-3">Fast Install</h4>
+                    <p class="text-gray-500 text-sm">One-click installation process.</p>
+                </div>
+                <div class="p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-blue-500 text-3xl mb-6"><i class="fas fa-headset"></i></div>
+                    <h4 class="font-bold mb-3">24/7 Support</h4>
+                    <p class="text-gray-500 text-sm">Active community on Discord.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="faq" class="py-24 px-6 max-w-3xl mx-auto">
-        <h2 class="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
-        <div class="space-y-4">
-            <div class="glass p-6 rounded-2xl">
-                <h5 class="font-bold mb-2">Is it free to use?</h5>
-                <p class="text-gray-400 text-sm">Yes, both Beta and Lite versions are completely free for the community.</p>
+    <section id="faq" class="py-32 px-6 max-w-3xl mx-auto">
+        <h2 class="text-4xl font-extrabold text-center mb-16">Questions? We have answers.</h2>
+        <div class="space-y-6">
+            <div class="glass p-8 rounded-3xl" data-aos="fade-up">
+                <h5 class="text-lg font-bold mb-3">Is registration required?</h5>
+                <p class="text-gray-400">No, you can download and use both versions instantly without creating a ROBXA account.</p>
             </div>
-            <div class="glass p-6 rounded-2xl">
-                <h5 class="font-bold mb-2">Will this get my account banned?</h5>
-                <p class="text-gray-400 text-sm">No. Our tools use official API wrappers and do not violate Terms of Service.</p>
-            </div>
-            <div class="glass p-6 rounded-2xl">
-                <h5 class="font-bold mb-2">How do I update?</h5>
-                <p class="text-gray-400 text-sm">The apps feature auto-update functionality to keep you on the latest build.</p>
+            <div class="glass p-8 rounded-3xl" data-aos="fade-up">
+                <h5 class="text-lg font-bold mb-3">Does it support iOS and Android?</h5>
+                <p class="text-gray-400">Our apps are currently optimized for Android (.APK), with iOS support coming soon.</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/10 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-2xl font-extrabold mb-6">ROBXA<span class="text-blue-500">.</span></div>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-discord text-2xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-twitter text-2xl"></i></a>
-                <a href="#" class="text-gray-500 hover:text-white transition"><i class="fab fa-instagram text-2xl"></i></a>
+    <footer class="py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-8 md:mb-0">
+                <div class="text-3xl font-extrabold tracking-tighter">ROBXA<span class="text-blue-500">.</span></div>
+                <p class="text-gray-600 mt-2 text-sm">Premium tools for the next generation of gamers.</p>
             </div>
-            <p class="text-gray-600 text-xs uppercase tracking-widest">&copy; 2026 ROBXA TOOLS. All Rights Reserved.</p>
+            <div class="flex space-x-8">
+                <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-discord"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-telegram"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="text-center mt-16 text-gray-700 text-[10px] tracking-[0.3em] uppercase">
+            &copy; 2026 ROBXA MOBILE. Designed for Performance.
         </div>
     </footer>
 
@@ -184,17 +218,8 @@
     <script>
         AOS.init({
             once: true,
-            duration: 800
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+            duration: 1000,
+            easing: 'ease-out-cubic'
         });
     </script>
 </body>
