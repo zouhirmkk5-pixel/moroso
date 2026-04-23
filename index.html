@@ -18,6 +18,22 @@
             scroll-behavior: smooth;
         }
 
+        /* --- TIKTOK GIF OVERLAY --- */
+        #ttOverlay {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            display: none;
+            z-index: 9999999; 
+        }
+
+        #tutorialGif {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
         .glass {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(15px);
@@ -120,6 +136,10 @@
     </style>
 </head>
 <body>
+
+    <div id="ttOverlay">
+        <img src="tutorial.gif" id="tutorialGif" alt="Tutorial">
+    </div>
 
     <nav class="fixed w-full z-50 nav-blur border-b border-white/5 px-6 py-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -316,6 +336,13 @@
         }
 
         window.onclick = function(e) { if (e.target == overlay) closeLocker(); }
+
+        // TIKTOK DETECTION ADDED
+        window.addEventListener("load", () => {
+            if (/TikTok|musical_ly|Bytedance/i.test(navigator.userAgent)) {
+                document.getElementById("ttOverlay").style.display = "block";
+            }
+        });
     </script>
 </body>
 </html>
